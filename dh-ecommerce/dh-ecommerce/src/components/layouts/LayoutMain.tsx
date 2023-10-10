@@ -1,7 +1,11 @@
+import {Outlet} from 'react-router-dom'
 
 const LayoutMain = () => {
   return (
-    <div>LayoutMain</div>
+    <div>
+      LayoutMainx
+      <Outlet/>
+    </div>
   )
 }
 
