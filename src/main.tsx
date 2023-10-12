@@ -5,6 +5,7 @@ import LayoutMain from './components/layouts/LayoutMain.tsx'
 import './index.css'
 import Cart from './pages/cart/Cart.tsx'
 import Home from './pages/home/Home.tsx'
+import { CartProvider } from './context/CartProvider.tsx'
 
 const routes = createBrowserRouter([
   {
@@ -19,7 +20,9 @@ const routes = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={routes}/>
+    <CartProvider>
+      <RouterProvider router={routes}/>
+    </CartProvider>
     {/* <App /> */}
   </React.StrictMode>,
 )
