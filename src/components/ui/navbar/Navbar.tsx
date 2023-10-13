@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className={styles.navbarDetail}>
         <img src={logoApp} alt="logo aplicacion" width={50} height={50}/>
         <div>
-          <h2>Ecommerce AM</h2>
+          <h2>Mario Bros Store</h2>
         </div>
       </div>
 

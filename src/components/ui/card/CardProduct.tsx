@@ -28,8 +28,7 @@ const CardProduct: FC<Props> = ({product}) => {
         <h3 className={styles.cardTitle}>{product.name}</h3>
       
         <div className={styles.cardBody}>
-          <p className={styles.cardType}>{product.character}</p>
-          <p className={styles.cardPrice}>Precio $ <small>00</small></p>
+          <p className={styles.cardPrice}>Price $ <small>00</small></p>
         </div>
         <button className={styles.cardButton} onClick={()=>addToCart(item)}>Add to cart</button>
       </div>
