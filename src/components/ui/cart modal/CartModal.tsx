@@ -1,8 +1,13 @@
 import Table from '../table/Table'
 import styles from './CartModal.module.css'
 import CloseButton from '../../../assets/close.svg'
+import { FC } from 'react'
 
-const CartModal = ({handleOpenModal}) => {
+interface Props{
+  handleOpenModal: ()=> void
+}
+
+const CartModal: FC<Props> = ({handleOpenModal}) => {
   return (
     <div className={styles.modalContainer}>
       <button className={styles.modalCloseButton} onClick={handleOpenModal}>
