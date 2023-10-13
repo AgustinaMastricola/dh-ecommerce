@@ -1,14 +1,14 @@
-import { CartContext } from '../../../context/CartContext'
+import { FC } from 'react'
+import useCartContext from '../../../hooks/useCartContext'
 import { CartProduct, Product } from '../../../interface'
 import styles from './CardProduct.module.css'
-import { FC, useContext } from 'react'
 
 interface Props{
   product: Product
 }
 
 const CardProduct: FC<Props> = ({product}) => {
-  const {dispatch} = useContext(CartContext)
+  const {dispatch} = useCartContext()
 
   const item = {
     id: product.id,
