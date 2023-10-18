@@ -14,7 +14,8 @@ const CardProduct: FC<Props> = ({product}) => {
     id: product.id,
     name: product.name,
     image: product.image,
-    quantity: 1
+    quantity: 1,
+    price: product.price
   }
 
   const addToCart = (item: CartProduct) => {
@@ -28,7 +29,7 @@ const CardProduct: FC<Props> = ({product}) => {
         <h3 className={styles.cardTitle}>{product.name}</h3>
       
         <div className={styles.cardBody}>
-          <p className={styles.cardPrice}>Price $ <small>00</small></p>
+          <p className={styles.cardPrice}>Price ${product.price},00</p>
         </div>
         <button className={styles.cardButton} onClick={()=>addToCart(item)}>Add to cart</button>
       </div>
