@@ -4,12 +4,19 @@ import styles from './Table.module.css'
 
 const Table = () => {
   const {state:{cartItems}, dispatch} = useCartContext()
+  console.log(cartItems)
 
   const removeCart = (item: CartProduct) => {
     dispatch({type:'REMOVE_FROM_CART', payload: item})
   }
   const addCart = (item: CartProduct) => {
     dispatch({type:'ADD_TO_CART', payload: item})
+  }
+  const totalCart = () => {
+    const total = cartItems.reduce((acc, item) => {
+      return acc + item.price * item.quantity
+    }, 0)
+    return total
   }
 
   return (
@@ -18,9 +25,9 @@ const Table = () => {
         <thead>
           <tr>
             <th>Product</th>
-            <th>Delete</th>
+            <th></th>
             <th>Quantity</th>
-            <th>Add</th>
+            <th></th>
             <th>Price</th>
           </tr>
         </thead>
@@ -51,7 +58,7 @@ const Table = () => {
       </table>
 
       <div className={styles.modalTotalContainer}>
-      <h3>Total: $</h3>
+      <h3>Total: ${totalCart()}</h3>
       </div>
     </>
   )
