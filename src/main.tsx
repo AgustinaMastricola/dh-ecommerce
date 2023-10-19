@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LayoutMain from './components/layouts/LayoutMain.tsx'
 import './index.css'
-import Cart from './pages/cart/Cart.tsx'
 import Home from './pages/home/Home.tsx'
 import { CartProvider } from './context/CartProvider.tsx'
+import Checkout from './pages/checkout/Checkout.tsx'
 
 const routes = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const routes = createBrowserRouter([
     element: <LayoutMain/>,
     children: [
       {index: true, element: <Home/>},
-      {path: '/cart', element: <Cart/>}
+      {path: '/checkout', element: <Checkout/>}
     ]
   }
 ])
@@ -23,6 +23,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <CartProvider>
       <RouterProvider router={routes}/>
     </CartProvider>
-    {/* <App /> */}
   </React.StrictMode>,
 )

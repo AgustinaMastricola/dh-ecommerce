@@ -12,7 +12,9 @@
 .modalTable tbody tr{
 	border-bottom: 1px solid #c0b9b95f;
 }
-
+.modalTable thead tr th{
+	padding: 10px;
+}
 .modalTable tbody tr:last-child{
 	border-bottom: none;
 }
@@ -21,7 +23,6 @@
 	padding: 15px;
 	text-align: center;
 }
-
 
 .modalButtonAdd{
   all: unset;

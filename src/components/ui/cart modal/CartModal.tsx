@@ -2,13 +2,18 @@ import { FC } from 'react'
 import CloseButton from '../../../assets/close.svg'
 import Table from '../table/Table'
 import styles from './CartModal.module.css'
+import {useNavigate} from 'react-router-dom'
 
 interface Props{
   handleOpenModal: ()=> void
 }
 
 const CartModal: FC<Props> = ({handleOpenModal}) => {
-  
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    navigate('/checkout')
+    handleOpenModal()
+  }
 
   return (
     <div className={styles.modalContainer}>
@@ -19,7 +24,7 @@ const CartModal: FC<Props> = ({handleOpenModal}) => {
       <Table/>
 
       <div className={styles.modalButtonContainer}>
-        <button>Checkout</button>
+        <button onClick={handleNavigate}>Checkout</button>
       </div>
     </div>
   )
