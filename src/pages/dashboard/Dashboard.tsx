@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './dashboard.module.css'
 import { useEffect, useState } from 'react'
+import { useMutation } from 'react-query'
+import { Product } from '../../interface'
+import { createProduct } from '../../service'
 
 const Dashboard = () => {
   const [product, setProduct] = useState({
@@ -31,7 +34,7 @@ const Dashboard = () => {
   }
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(product)
+    mutation.mutate(product)
   }
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setProduct({
@@ -39,6 +42,10 @@ const Dashboard = () => {
       [e.target.name] : e.target.value
     })
   }
+  const mutation = useMutation((newProduct: Product)=>{
+    console.log(newProduct)
+    return createProduct(newProduct)
+  })
 
   return (
     <div className={styles.container}>
