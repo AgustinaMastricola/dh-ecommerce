@@ -4,7 +4,6 @@
 	border-radius: 5px;
 	border-spacing: 0;
 	color: #fff;
-	margin-top: 2rem;
 	padding: 1rem;
 	width: 100%;
 }
@@ -14,9 +13,7 @@
 }
 .modalTable thead tr th{
 	padding: 10px;
-}
-.modalTable tbody tr:last-child{
-	border-bottom: none;
+	border-bottom: 1px solid #c0b9b95f;
 }
 
 .modalTable tbody tr td{

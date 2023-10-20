@@ -4,7 +4,6 @@ import styles from './Table.module.css'
 
 const Table = () => {
   const {state:{cartItems}, dispatch} = useCartContext()
-  console.log(cartItems)
 
   const removeCart = (item: CartProduct) => {
     dispatch({type:'REMOVE_FROM_CART', payload: item})
