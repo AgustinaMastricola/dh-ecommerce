@@ -53,7 +53,7 @@ const navigate = useNavigate()
           />
         </div>
         <div className={styles.formControlLogin}>
-          <button type='submit'>Login</button>
+          <button className={styles.loginButton} type='submit'>Login</button>
         </div>
       </form>
     </div>
